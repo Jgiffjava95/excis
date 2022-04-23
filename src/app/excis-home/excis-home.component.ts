@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AudioService } from '../services/audio.service';
 
 @Component({
   selector: 'app-excis-home',
@@ -6,28 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./excis-home.component.css'],
 })
 export class ExcisHomeComponent implements OnInit {
-  audioPlaying = false;
-  audio = new Audio();
-  playIconState = 'volume_off';
 
-  constructor() {
-    this.audio.src = 'assets/EXCIS-audio-4-min-loop.mp3';
+  @ViewChild('whiteOverlay') whiteOverlay!: ElementRef
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.renderer.addClass(this.whiteOverlay.nativeElement, 'fade-out-overlay')
+    }, 1000)
   }
 
-  ngOnInit(): void {}
-
-  playAudio(): void {
-    if (!this.audioPlaying) {
-      this.audio.load();
-      this.audio.play();
-      this.audioPlaying = true;
-      this.playIconState = 'volume_up';
-    } else {
-      this.audio.load();
-      this.audio.pause;
-      this.audio.currentTime = 0;
-      this.audioPlaying = false;
-      this.playIconState = 'volume_off';
-    }
+  constructor(
+    public audioService: AudioService,
+    public renderer: Renderer2
+  ) {
   }
+
 }

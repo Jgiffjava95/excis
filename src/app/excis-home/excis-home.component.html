@@ -6,6 +6,8 @@
     <img id="logo" src="assets/EXCIS-Official-Logo-2021-WHITE.png" />
   </div>
 </div>
-<button (click)="playAudio()">
-  <mat-icon>{{playIconState}}</mat-icon>
+<button (click)="audioService.playAudio()">
+  <mat-icon>{{audioService.playIconState}}</mat-icon>
 </button>
+
+<div #whiteOverlay class="flash-overlay"></div>

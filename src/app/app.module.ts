@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { ExcisHomeComponent } from './excis-home/excis-home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExcisHomeComponent
   ],
   imports: [
     BrowserModule

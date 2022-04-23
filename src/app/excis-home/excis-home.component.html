@@ -1,1 +1,11 @@
-<p>excis-home works!</p>
+<div id="excis-home">
+  <video id="space-vid" [muted]="true" autoplay loop playsinline>
+    <source src="assets/space-no-logo.mp4" type="video/mp4" />
+  </video>
+  <div id="logo-container" class="fade-in-image">
+    <img id="logo" src="assets/EXCIS-Official-Logo-2021-WHITE.png" />
+  </div>
+</div>
+<button (click)="playAudio()">
+  <mat-icon>{{playIconState}}</mat-icon>
+</button>

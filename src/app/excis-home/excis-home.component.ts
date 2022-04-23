@@ -3,13 +3,31 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-excis-home',
   templateUrl: './excis-home.component.html',
-  styleUrls: ['./excis-home.component.css']
+  styleUrls: ['./excis-home.component.css'],
 })
 export class ExcisHomeComponent implements OnInit {
+  audioPlaying = false;
+  audio = new Audio();
+  playIconState = 'volume_off';
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
+    this.audio.src = 'assets/EXCIS-audio-4-min-loop.mp3';
   }
 
+  ngOnInit(): void {}
+
+  playAudio(): void {
+    if (!this.audioPlaying) {
+      this.audio.load();
+      this.audio.play();
+      this.audioPlaying = true;
+      this.playIconState = 'volume_up';
+    } else {
+      this.audio.load();
+      this.audio.pause;
+      this.audio.currentTime = 0;
+      this.audioPlaying = false;
+      this.playIconState = 'volume_off';
+    }
+  }
 }

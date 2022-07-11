@@ -14,6 +14,10 @@ export class ExcisHomeComponent implements OnInit {
     setTimeout(() => {
       this.renderer.addClass(this.whiteOverlay.nativeElement, 'fade-out-overlay')
     }, 1000)
+
+    setTimeout(() => {
+      this.renderer.addClass(this.whiteOverlay.nativeElement, 'display-none')
+    }, 2000)
   }
 
   constructor(

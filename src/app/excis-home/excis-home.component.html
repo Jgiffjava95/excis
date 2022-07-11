@@ -1,13 +1,61 @@
-<div id="excis-home">
+<mat-drawer-container id="excis-home" autosize>
   <video id="space-vid" [muted]="true" autoplay loop playsinline>
     <source src="assets/space-no-logo.mp4" type="video/mp4" />
   </video>
   <div id="logo-container" class="fade-in-image">
     <img id="logo" src="assets/EXCIS-Official-Logo-2021-WHITE.png" />
   </div>
-</div>
-<button (click)="audioService.playAudio()">
-  <mat-icon>{{audioService.playIconState}}</mat-icon>
-</button>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a
+        class="fab fa-facebook fa-2x iconPadding fbIconColor"
+        href="https://www.facebook.com/anygivenroom/"
+      ></a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="fab fa-instagram fa-2x iconPadding instIconColor"
+        href="https://www.instagram.com/anygivenroom/"
+      ></a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="fab fa-youtube fa-2x iconPadding ytIconColor"
+        href="https://www.youtube.com/channel/UCdG14XuFvF_4hZkO9c5A6lw"
+      ></a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="fab fa-spotify fa-2x iconPadding sptfyIconColor"
+        href="https://open.spotify.com/artist/7KcU34oMka3jv5PZwC6G0f"
+      ></a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="fab fa-itunes fa-2x iconPadding aplmIconColor"
+        href="https://music.apple.com/us/artist/any-given-room/1241157262"
+      ></a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="fab fa-google-play fa-2x iconPadding gglplyIconColor"
+        href="https://play.google.com/store/music/artist?id=An76z3g2dy5h4v5i2k4oluv5hbu&hl=en_US"
+      ></a>
+    </li>
+  </ul>
+  <button class="mute-button" (click)="audioService.playAudio()">
+    <mat-icon>{{ audioService.playIconState }}</mat-icon>
+  </button>
+
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+  </mat-drawer>
+
+  <div class="sidenav-button">
+    <button class="sidenav-button" type="button" mat-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+</mat-drawer-container>
 
 <div #whiteOverlay class="flash-overlay"></div>

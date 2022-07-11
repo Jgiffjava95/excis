@@ -1,5 +1,6 @@
 #excis-home {
   height: 100%;
+  width: 100%;
 }
 
 #space-vid {
@@ -39,6 +40,10 @@
   opacity: 0;
 }
 
+.display-none {
+  display: none;
+}
+
 .fade-in-image {
   animation: fadeIn 7s;
   -webkit-animation: fadeIn 7s;
@@ -71,7 +76,7 @@
   100% {opacity:1;}
 }
 
-button {
+.mute-button {
   color: white;
   background-color: transparent;
   border: none;
@@ -87,6 +92,26 @@ mat-icon {
   height: 60px;
   width: 60px;
   font-size: 60px;
+}
+
+.sidenav-button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  position: fixed;
+  z-index: 1;
+  height: 100px;
+  width: 100px;
+  top: 0;
+  left: 0;
+}
+
+.sidenav {
+  height: 100%;
+  width: 20%;
+  background-color: black;
+  opacity: 0.5;
+  color: white;
 }
 
 

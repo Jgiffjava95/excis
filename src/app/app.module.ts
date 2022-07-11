@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDrawerContainer} from '@angular/material/sidenav';
 import { AppComponent } from './app.component';
 import { ExcisHomeComponent } from './excis-home/excis-home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
     MatIconModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSidenavModule
   ],
   providers: [AudioService],
   bootstrap: [AppComponent]

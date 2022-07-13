@@ -11,7 +11,7 @@ export class AppComponent {
 
   constructor(public router: Router) {}
 
-  isLaunchPage(): String {
+  isSideNavButtonVisible(): String {
     return this.router.url === '/' ? 'hidden' : 'visible';
   }
 }

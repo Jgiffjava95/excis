@@ -94,24 +94,3 @@ mat-icon {
   font-size: 60px;
 }
 
-.sidenav-button {
-  background-color: transparent;
-  color: white;
-  border: none;
-  position: fixed;
-  z-index: 1;
-  height: 100px;
-  width: 100px;
-  top: 0;
-  left: 0;
-}
-
-.sidenav {
-  height: 100%;
-  width: 20%;
-  background-color: black;
-  opacity: 0.5;
-  color: white;
-}
-
-

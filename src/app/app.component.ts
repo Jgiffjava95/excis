@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,9 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 export class AppComponent {
   title = 'excis';
 
-  constructor() {
-  }
+  constructor(public router: Router) {}
 
+  isLaunchPage(): String {
+    return this.router.url === '/' ? 'hidden' : 'visible';
+  }
 }

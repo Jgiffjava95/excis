@@ -1,4 +1,11 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
+
 import { AudioService } from '../services/audio.service';
 
 @Component({
@@ -7,23 +14,24 @@ import { AudioService } from '../services/audio.service';
   styleUrls: ['./excis-home.component.css'],
 })
 export class ExcisHomeComponent implements OnInit {
-
-  @ViewChild('whiteOverlay') whiteOverlay!: ElementRef
-
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.renderer.addClass(this.whiteOverlay.nativeElement, 'fade-out-overlay')
-    }, 1000)
-
-    setTimeout(() => {
-      this.renderer.addClass(this.whiteOverlay.nativeElement, 'display-none')
-    }, 2000)
-  }
+  @ViewChild('whiteOverlay') whiteOverlay!: ElementRef;
 
   constructor(
     public audioService: AudioService,
     public renderer: Renderer2
-  ) {
+  ) {}
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.renderer.addClass(
+        this.whiteOverlay.nativeElement,
+        'fade-out-overlay'
+      );
+    }, 1000);
+
+    setTimeout(() => {
+      this.renderer.addClass(this.whiteOverlay.nativeElement, 'display-none');
+    }, 2000);
   }
 
 }

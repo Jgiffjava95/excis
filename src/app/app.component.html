@@ -1,4 +1,19 @@
-<router-outlet></router-outlet>
+<mat-drawer-container id="drawer-container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+  </mat-drawer>
+  <router-outlet></router-outlet>
+  <div class="sidenav-button" [style.visibility]="isLaunchPage()">
+    <button
+      class="sidenav-button"
+      type="button"
+      mat-button
+      (click)="drawer.toggle()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+</mat-drawer-container>
 <audio id="excis-audio" [loop]="true">
   <source [src]="'assets/EXCIS-audio-4-min-loop.mp3'" type="audio/mp3" />
 </audio>
